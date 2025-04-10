@@ -1,0 +1,104 @@
+<html>
+	<head>  
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>F1 Circuitos</title>
+		<link rel="icon" type="image/x-icon" href="./Inicio/logof1.png">
+		<link rel="stylesheet" type="text/css" href="./f1web.css" media="screen">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	</head>
+	<body id="circuitos">
+        <script type="text/javascript">
+            function abrirBarra() {
+            	var navegacion = document.getElementById("barra");
+            	navegacion.classList.toggle("active");
+        	}
+			let cantidadColumnas = 6;
+			var ancho = window.matchMedia("(max-width: 960px)");
+			function comprobarAncho(dimensiones) {
+  				if (dimensiones.matches) {
+    			cantidadColumnas = 4;
+  				} else {
+    			cantidadColumnas = 6;
+  				}
+				inicio();
+			}
+			ancho.addListener(comprobarAncho);
+			var pistas=[                   
+                    ['AUSTRALIA', './Circuitos/australia.png', 'australia'],
+                    ['CHINA', './Circuitos/china.png', 'china'],
+                    ['JAPÓN', './Circuitos/japon.png', 'japon'],
+                    ['BARÉIN', './Circuitos/barein.png', 'barein'],
+                    ['ARABIA SAUDITA', './Circuitos/arabiasaudita.png', 'arabiasaudita'],
+                    ['MIAMI', './Circuitos/miami.png', 'miami'],
+                    ['ÍMOLA', './Circuitos/imola.png', 'imola'],
+                    ['MÓNACO', './Circuitos/monaco.png', 'monaco'],
+                    ['ESPAÑA', './Circuitos/espana.png', 'espana'],
+                    ['CANADÁ', './Circuitos/canada.png', 'canada'],
+                    ['AUSTRIA', './Circuitos/austria.png', 'austria'],
+                    ['GRAN BRETAÑA', './Circuitos/granbretana.png', 'granbretana'],
+                    ['BÉLGICA', './Circuitos/belgica.png', 'belgica'],
+                    ['HUNGRÍA', './Circuitos/hungria.png', 'hungria'],
+                    ['PAÍSES BAJOS', './Circuitos/paisesbajos.png', 'paisesbajos'],
+                    ['ITALIA', './Circuitos/italia.png', 'italia'],
+                    ['AZERBAIYÁN', './Circuitos/azerbaiyan.png', 'azerbaiyan'],
+                    ['SINGAPUR', './Circuitos/singapur.png', 'singapur'],
+                    ['EEUU', './Circuitos/eeuu.png', 'eeuu'],
+                    ['MÉXICO', './Circuitos/mexico.png', 'mexico'],
+					['BRASIL', './Circuitos/brasil.png', 'brasil'],
+					['LAS VEGAS', './Circuitos/lasvegas.png', 'lasvegas'],
+					['QATAR', './Circuitos/qatar.png', 'qatar'],
+					['ABU DABI', './Circuitos/abudabi.png', 'abudabi']
+            ];
+			function inicio(){
+				var html = "";
+				var i = 0;
+				for(var pista of pistas)
+				{
+					if(i%cantidadColumnas == 0)
+					{
+						html += "<tr>";
+					}
+					var boton = i + 1;
+					html += '<td><div class=circuito><div class="arriba"><img class="lugares" id="'+pista[2]+'" src="'+pista[1]+'"></div><div class="abajo">'+pista[0]+'</div></div></td>';
+					i = boton;
+					if(i%cantidadColumnas == 0)
+					{
+						html += '</tr>';
+					}
+				}
+				document.getElementById('tabla').innerHTML = html;
+			}
+			window.onload = function(){
+				comprobarAncho(ancho);
+				inicio();
+			};
+        </script>
+        <button id="menu" onclick="abrirBarra()">☰</button>
+		<nav id="barra">
+			<ul>
+				<li><a href="./inicio.html">Inicio</a></li>
+				<li><a href="./historia.html">Historia de la F1</a></li>
+				<li><a href="./actual.html">Equipos y pilotos</a></li>
+				<li><a href="./circuitos.html">Circuitos</a></li>
+				<li><a href="./reglamento.html">Reglamento Básico</a></li>
+				<li><a href="./momentos.html">Sucesos Históricos</a></li>
+				<li><a href="./tecnologia.html">Tecnología en la F1</a></li>
+				<li><a href="./rivalidades.html">Rivalidades Históricas</a></li>
+				<li><a href="./whoiswho.html">¿Quién es Quién?</a></li>
+				<li><a href="./contacto.html">Formulario</a></li>
+			</ul>
+		</nav>
+		<header id="titulo">
+			<img class="logo" src="./Inicio/logof1.png">
+			<p id="texto1">Circuitos</p>
+			<img class="logo" src="./Inicio/logof1.png">
+		</header>
+		<table id="tabla">
+        </table>
+    </body>
+</html>

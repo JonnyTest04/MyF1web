@@ -1,0 +1,924 @@
+/*Aplica a todos*/
+* {
+	box-sizing: border-box;
+	border-collapse: collapse;
+}
+body {
+	background-image: url('./Inicio/fondof1.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	color: black;
+	font-family: 'Bebas Neue', sans-serif;
+}
+table tr td {
+	position: relative;
+}
+button {
+	font-family: 'Bebas Neue', sans-serif;
+}
+#menu {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	width: 50px;
+	height: 50px;
+	background: white;
+	border: 2px solid black;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 30px;
+	z-index: 1000;
+	text-align: center;
+	vertical-align: middle;
+}
+#barra {
+	position: fixed;
+    top: 75px;
+    left: -12.5%;
+	width: 12.5%;
+	background-color: #222222;
+	border: 3px solid black;
+	transition: left 0.3s ease;
+	z-index: 1000;
+}
+#barra.active {
+	left: 0;
+}
+#barra ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#barra ul li a {
+	display: block;
+	text-transform: uppercase;
+	font-size: 1.2vw;
+	color: white;
+	padding: 8px 16px;
+	text-decoration: none;
+	text-align: center;
+	transition: 0.3s;
+}
+#barra ul li a:hover {
+	background-color: #555555;
+	color: white;
+}
+#titulo {
+	display: flex;
+	border: 2px solid black;
+	border-radius: 5px;
+	background-color: white;
+	margin: 10px auto;
+	padding: 0 3.5vw;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	width: 50%;
+}
+.logo {
+	flex: 1;
+	max-width: 15%;
+	height: auto;
+	margin: 0 auto;
+}
+#texto1 {
+	flex: 1;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0 auto;
+	font-size: 3.8vw;
+	white-space: nowrap;
+	object-fit: contain;
+}
+#cookies {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+}
+#cookies #caja-cookies {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 70%;
+    border: 3px solid black;
+}
+#cookies #caja-cookies h2 {
+    font-size: 1.6vw;
+    margin-bottom: 10px;
+}
+#cookies #caja-cookies p {
+    font-size: 1.2vw;
+    margin-bottom: 20px;
+}
+#cookies #caja-cookies button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1vw;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#cookies #caja-cookies button:hover {
+    background: darkred;
+}
+/*Aplica al whoiswho.html*/
+#whoiswho #juego {
+	display: flex;
+	margin: 5px auto;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	width: 50%;
+}
+#whoiswho #juego button:hover{
+	cursor: pointer;
+	transform: scale(1.1);
+}
+#whoiswho #botonnombres{
+	display: inline-block;
+}
+#whoiswho #botonfotos{
+	display: none;
+}
+#whoiswho .pequeno {
+	flex: 1;
+	background-color: white;
+	border: 2px solid black;
+	border-radius: 5px;
+	font-size: 1.2vw;
+	text-transform: uppercase;
+	white-space: nowrap;
+	max-width: 15%;
+}
+#whoiswho .grande {
+	flex: 1;
+	background-color: white;
+	border: 2px solid black;
+	border-radius: 5px;
+	font-size: 1.6vw;
+	text-transform: uppercase;
+	white-space: nowrap;
+	max-width: 20%;
+}
+#whoiswho #tabla{
+	width: 60%;
+	height: 40vh;
+	margin: 0 auto;
+}
+#whoiswho #tabla tr td {
+	height: 25%;
+	width: 12.5%;
+	border: 3px solid black;
+	background-color: white;
+}
+#whoiswho #tabla tr td div{
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+}
+#whoiswho #tabla tr td div:hover{
+	cursor: pointer;
+}
+#whoiswho .pilotos {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	height: auto;
+	width: 97.5%;
+	max-width: 100%;
+	max-height: 100%;
+	margin: 0 auto;
+	object-fit: contain;
+}
+#whoiswho .nombres {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 1vw;
+	text-transform: uppercase;
+	margin: 0 auto;
+	border: none;
+	display: none;
+	background-color: white;
+	width: 99%;
+	height: 99%;
+}
+#whoiswho .nombres:hover{
+	cursor: pointer;
+}
+#whoiswho #abajo {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 25%;
+	height: 32.5vh;
+	margin: 10px auto;
+	gap: 10px;
+}
+#whoiswho #separada {
+	border: 5px double green;
+	background-color: white;
+	width: 55%;
+	height: 60%;
+	display: grid;
+	grid-template-rows: 80% 20%;
+}
+#whoiswho #separada #fotoadivinar, #whoiswho #separada #nombretuyo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#whoiswho #interrogante {
+	display: block;
+	margin: 0 auto;
+	height: auto;
+	width: 95%;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+#whoiswho #tuyo {
+	display: none;
+	margin: 0 auto;
+	height: auto;
+	width: 95%;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+#whoiswho #nombretuyo{
+	font-size: 1.2vw;
+	text-transform: uppercase;
+	white-space: nowrap;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	text-shadow: 0 0 5px green;
+}
+#whoiswho #aleatoria {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+}
+#whoiswho #subtitulo {
+	flex: 1;
+	background-color: white;
+	border: 2px solid black;
+	border-radius: 5px;
+	font-size: 1.2vw;
+	text-transform: uppercase;
+	white-space: nowrap;
+	text-align: center;
+	width: 55%;
+}
+#whoiswho #intentos tr td {
+	border: 3px solid black;
+	background-color: white;
+	height: 2.2vw;
+	width: 2.2vw;
+}
+#whoiswho .ticks {
+	display: none;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+}
+#whoiswho .correcto {
+	margin: 0 auto;
+	display: block;
+	background-color: white;
+	border: none;
+	height: 100%;
+	width: 100%;
+}
+#whoiswho .ticks:hover {
+	cursor: pointer;
+}
+#whoiswho .correcto:hover {
+	cursor: pointer;
+}
+#whoiswho body.swal2-shown > [aria-hidden="true"] {
+	transition: 0.2s filter;
+	filter: blur(3px);
+}
+/*Aplica a inicio.html*/
+#inicio #coches {
+    width: 100%;
+    max-width: 80%;
+    overflow: hidden;
+    position: relative;
+    margin: 4vh auto;
+    display: flex;
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+#inicio #coches img {
+    width: 25%;
+    height: auto;
+    padding: 0 25px;
+    animation: deslizar 60s linear 0.5s infinite;
+}
+#inicio #opciones{
+    width: 50%;
+	height: 60vh;
+	margin: 0 auto;
+}
+#inicio #opciones tr:nth-child(even){
+    height: 8%;
+}
+#inicio #opciones tr:nth-child(even) td{
+    background-color: white;
+}
+#inicio #opciones tr:nth-child(odd){
+    height: 25%;
+}
+#inicio #opciones tr:nth-child(odd) td{
+	background-size: cover;
+}
+#inicio #opciones tr:nth-child(odd):not(:nth-child(3)) td{
+	background-size: cover;
+    background-position: center top;
+}
+#inicio #opciones tr:nth-child(3) td{
+	background-size: cover;
+    background-position: center center;
+}
+#inicio #opciones tr td{
+    width: 30%;
+    border: 2px solid black;
+}
+#inicio #opciones tr td button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+}
+#inicio #opciones tr td button:hover{
+	cursor: pointer;
+}
+#inicio #opciones tr td div{
+	font-size: 1.4vw;
+	text-transform: uppercase;
+	white-space: nowrap;
+	text-align: center;
+    height: 100%;
+	width: 100%;
+}
+#inicio #casilla11{
+    background-image: url("./Inicio/historia.jpg");
+}
+#inicio #casilla12{
+    background-image: url("./Inicio/parrilla.jpg");
+}
+#inicio #casilla13{
+    background-image: url("./Inicio/monaco.png");
+}
+#inicio #casilla21{
+    background-image: url("./Inicio/cochefom.jpg");
+}
+#inicio #casilla22{
+    background-image: url("./Inicio/celebracion.jpg");
+}
+#inicio #casilla23{
+    background-image: url("./Inicio/tecnologia.jpg");
+}
+#inicio #casilla31{
+    background-image: url("./Inicio/sennaprost.jpg");
+}
+#inicio #casilla32{
+    background-image: url("./Inicio/interrogante.png");
+}
+#inicio #casilla33{
+    background-image: url("./Inicio/favorito.jpg");
+}
+/*Aplica a contacto.html*/
+#contacto form {
+	width: 50%;
+	margin: 0 auto;
+	padding: 20px;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+#contacto form label, #contacto form .error{
+	font-size: 1.2vw;
+	margin: 0 auto;
+}
+#contacto form .error{
+	color: red;
+}
+#contacto form .campo {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 10px auto;
+	width: 75%;
+}
+#contacto form #nombre, #email, #equipo, #comentarios {
+	width: 60%;
+	margin: 0 auto;
+}
+#contacto form .favs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+	width: 100%;
+	white-space: nowrap;
+}
+#contacto form .pilotosf1 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+/*Aplica a circuitos.html*/
+#circuitos #tabla{
+	width: 60%;
+	height: 100vh;
+	margin: 20px auto;
+	table-layout: fixed;
+}
+#circuitos #tabla tr td {
+	height: 25%;
+	width: 16.6%;
+	border: 3px solid black;
+	background-color: white;
+}
+#circuitos .circuito{
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-rows: 75% 25%;
+}
+#circuitos .circuito .arriba, #circuitos .circuito .abajo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#circuitos .circuito .lugares {
+	margin: 0 auto;
+	height: auto;
+	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+#circuitos .circuito .abajo{
+	font-size: 1.2vw;
+	text-transform: uppercase;
+	white-space: nowrap;
+	text-align: center;
+}
+/*Aplica a historia.html*/
+#historia #tabla{
+	width: 60%;
+	height: 100vh;
+	margin: 20px auto;
+	table-layout: fixed;
+}
+#historia #tabla tr td {
+	height: 6.6%;
+	width: 20%;
+	border: 3px solid black;
+	background-color: white;
+	overflow: hidden;
+}
+#historia .temporada{
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-rows: 15% 70% 15%;
+}
+#historia .temporada .ano, #historia .temporada .foto, #historia .temporada .nombre {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#historia .temporada .personas {
+	margin: 0 auto;
+	height: auto;
+	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+}
+#historia .temporada .ano, #historia .temporada .nombre{
+	font-size: 1.2vw;
+	text-transform: uppercase;
+	white-space: nowrap;
+	text-align: center;
+}
+/*Aplica a momentos.html*/
+#momentos #etapas {
+    width: 60%;
+    margin: 20px auto;
+    padding: 1vw;
+    background: white;
+    border-radius: 10px;
+	border: 3px solid black;
+	font-size: 1vw;
+}
+#momentos #etapas .decada {
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+#momentos #etapas .decada h2 {
+	margin: 0 auto;
+	cursor: pointer;
+    background: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+	font-size: 1.6vw;
+}
+#momentos #etapas .decada .contenido {
+    display: none;
+}
+#momentos #etapas .decada ul {
+    list-style-type: none;
+}
+#momentos #etapas .decada ul li {
+    margin: 10px 0;
+    padding: 5px;
+    border-left: 5px solid red;
+	font-size: 1vw;
+}
+#momentos #etapas .decada ul li span {
+	font-size: 1.2vw;
+	text-decoration: underline;
+}
+/*Aplica a reglamento.html*/
+#reglamento #listado {
+    width: 60%;
+    margin: 20px auto;
+    padding: 1vw;
+    background: white;
+    border-radius: 10px;
+    border: 3px solid black;
+	font-size: 1vw;
+}
+#reglamento #listado .normas {
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+#reglamento #listado .normas h2 {
+    margin: 0 auto;
+	cursor: pointer;
+    background: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+	font-size: 1.6vw;
+}
+#reglamento #listado .normas ul {
+    list-style-type: none;
+}
+#reglamento #listado .normas .contenido {
+    display: none;
+}
+#reglamento #listado .normas ul li {
+    margin: 10px 0;
+    padding: 5px 10px;
+    border-left: 5px solid red;
+    font-size: 1vw;
+}
+#reglamento #listado .normas ul li span {
+    font-size: 1.2vw;
+    text-decoration: underline;
+}
+/*Aplica a rivalidades.html*/
+#rivalidades #duelos {
+    width: 50%;
+    margin: 20px auto;
+    padding: 1vw;
+    background: white;
+    border-radius: 10px;
+    border: 3px solid black;
+}
+#rivalidades #duelos .rivalidad {
+	width: 100%;
+	text-align: center;
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 20px;
+	gap: 20px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+	transition: transform 0.2s;
+}
+#rivalidades #duelos .rivalidad:hover {
+    transform: scale(1.01);
+}
+#rivalidades #duelos .rivalidad img {
+	margin: 0 auto;
+	width: 50%;
+	height: 200px;
+    border-radius: 5px;
+	object-fit: cover;
+}
+#rivalidades #duelos .rivalidad h2 {
+	margin: 0 auto;
+    font-size: 1.6vw;
+}
+#rivalidades #duelos .rivalidad p {
+	margin: 0 auto;
+	width: 80%;
+    font-size: 1.2vw;
+}
+/*Aplica a actual.html*/
+#actual #temporada {
+    width: 60%;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+	border: 3px solid black;
+    padding: 1vw;
+}
+#actual #temporada h1 {
+    text-align: center;
+	text-decoration: underline;
+	font-size: 1.8vw;
+	white-space: nowrap;
+}
+#actual #temporada #parrilla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+#actual #temporada .escuderia {
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+#actual #temporada .escuderia:hover {
+    transform: scale(1.02);
+}
+#actual #temporada .escuderia img {
+    width: 100%;
+    height: auto;
+}
+#actual #temporada .escuderia h2 {
+    font-size: 1.4vw;
+    margin: 10px 0;
+	white-space: nowrap;
+}
+#actual #temporada .escuderia ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+#actual #temporada .escuderia li {
+    margin: 5px 0;
+    font-size: 1vw;
+	white-space: nowrap;
+}
+/*Aplica a tecnologia.html*/
+#tecnologia #etapas {
+    width: 60%;
+    margin: 20px auto;
+	border: 3px solid black;
+	background: white;
+	border-radius: 10px;
+    padding: 1vw;
+	font-size: 1vw;
+}
+#tecnologia #etapas .seccion {
+    border: 1px solid lightgray;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+#tecnologia #etapas .seccion h2 {
+	margin: 0 auto;
+    cursor: pointer;
+    background: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+	font-size: 1.6vw;
+}
+#tecnologia #etapas .seccion .contenido {
+    display: none;
+    padding: 15px;
+	font-size: 1vw;
+}
+#tecnologia #etapas .seccion .contenido h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+	font-size: 1.2vw;
+	text-decoration: underline;
+}
+#tecnologia #etapas .seccion .contenido span {
+	font-size: 1.1vw;
+	text-decoration: underline;
+}
+/*Animacion perteneciente a inicio.html*/
+@keyframes deslizar {
+    0% { transform: translateX(-1000%); }
+    100% { transform: translateX(0%); }  
+}
+@media (max-width: 960px) {
+	/*Aplica a todos*/
+	#barra {
+		left: -35%;
+		width: 35%;
+	}
+	#barra ul li a {
+		font-size: 3.6vw;
+	}
+	#titulo{
+		width: 70%;
+	}
+	#texto1{
+		font-size: 6vw;
+	}
+	.logo{
+		width: 25%;
+	}
+	#cookies #caja-cookies h2 {
+		font-size: 4vw;
+	}
+	#cookies #caja-cookies p {
+		font-size: 3.6vw;
+	}
+	#cookies #caja-cookies button {
+		font-size: 3.2vw;
+	}
+	/*Aplica a whoiswho.html*/
+	#whoiswho .pequeno{
+		max-width: 22.5%;
+		font-size: 3.6vw;
+	}
+	#whoiswho .grande{
+		max-width: 25%;
+		font-size: 4.8vw;
+	}
+	#whoiswho #juego{
+		width: 90%;
+	}
+	#whoiswho #tabla{
+		width: 90%;
+		height: 105%;
+	}
+	#whoiswho .nombres {
+		font-size: 3vw;
+	}
+	#whoiswho #tabla tr td {
+		height: 12.5%;
+		width: 25%;
+	}
+	#whoiswho #abajo{
+		width: 75%;
+		height: 45%;
+	}
+	#whoiswho #nombretuyo{
+		font-size: 3.6vw;
+	}
+	#whoiswho #subtitulo {
+		font-size: 3.6vw;
+	}
+	#whoiswho #intentos tr td {
+		height: 6.6vw;
+		width: 6.6vw;
+	}
+	/*Aplica a inicio.html*/
+	#inicio #opciones{
+        width: 90%;
+        height: 110%;
+    }
+	#inicio #coches img {
+		width: 75%;
+	}
+    #inicio #opciones tr td div{
+        font-size: 4.2vw;
+    }
+	/*Aplica a contacto.html*/
+	#contacto form{
+		width: 90%;
+	}
+	#contacto form label {
+		font-size: 3vw;
+	}
+	#contacto form #nombre, #email, #equipo, #comentarios {
+		width: 80%;
+	}
+	/*Aplica a circuitos.html*/
+	#circuitos #tabla tr td {
+		width: 25%;
+		height: 16.6%;
+	}
+	#circuitos #tabla{
+		width: 90%;
+	}
+	#circuitos .circuito .abajo{
+		font-size: 3.6vw;
+	}
+	/*Aplica a historia.html*/
+	#historia #tabla{
+		width: 90%;
+	}
+	#historia #tabla tr td {
+		height: 4%;
+		width: 33.3%;
+	}
+	#historia .temporada .ano, #historia .temporada .nombre{
+		font-size: 3.6vw;
+	}
+	/*Aplica a momentos.html*/
+	#momentos #etapas {
+		width: 90%;
+		font-size: 2.4vw;
+	}
+	#momentos #etapas .decada h2 {
+		font-size: 4.2vw;
+	}
+	#momentos #etapas .decada ul li {
+		font-size: 3vw;
+	}
+	#momentos #etapas .decada ul li span {
+		font-size: 3.6vw;
+	}
+	/*Aplica a reglamento.html*/
+	#reglamento #listado {
+		width: 90%;
+		font-size: 2.4vw;
+	}
+	#reglamento #listado .normas h2 {
+		font-size: 4.2vw;
+	}
+	#reglamento #listado .normas ul li {
+		font-size: 3vw;
+	}
+	#reglamento #listado .normas ul li span {
+		font-size: 3.6vw;
+	}
+	/*Aplica a rivalidades.html*/
+	#rivalidades #duelos {
+		width: 90%;
+	}
+	#rivalidades #duelos .rivalidad img {
+		width: 90%;
+	}
+	#rivalidades #duelos .rivalidad h2 {
+		font-size: 3.6vw;
+	}
+	#rivalidades #duelos .rivalidad p {
+		font-size: 2.4vw;
+	}
+	/*Aplica a actual.html*/
+	#actual #temporada {
+		width: 90%;
+	}
+	#actual #temporada h1 {
+		font-size: 4vw;
+	}
+	#actual #temporada .escuderia h2 {
+		font-size: 3vw;
+	}
+	#actual #temporada .escuderia li {
+		font-size: 2.4vw;
+	}
+	/*Aplica a tecnologia.html*/
+	#tecnologia #etapas {
+		width: 90%;
+		font-size: 2.4vw;
+	}
+	#tecnologia #etapas .seccion h2 {
+		font-size: 4.2vw;
+	}
+	#tecnologia #etapas .seccion .contenido {
+		font-size: 3vw;
+	}
+	#tecnologia #etapas .seccion .contenido h3 {
+		font-size: 3.6vw;
+	}
+	#tecnologia #etapas .seccion .contenido span {
+		font-size: 3.2vw;
+	}
+}

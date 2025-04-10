@@ -1,0 +1,126 @@
+<html>
+	<head>  
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>F1 Reglamento</title>
+		<link rel="icon" type="image/x-icon" href="./Inicio/logof1.png">
+		<link rel="stylesheet" type="text/css" href="./f1web.css" media="screen">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	</head>
+	<body id="reglamento">
+        <script type="text/javascript">
+            function abrirBarra() {
+            	var navegacion = document.getElementById("barra");
+            	navegacion.classList.toggle("active");
+        	}
+			function esconder(id) {
+    			const contenido = document.getElementById(id);
+    			if (contenido.style.display === "block") {
+        			contenido.style.display = "none";
+    			} else {
+        			contenido.style.display = "block";
+    			}
+			}
+        </script>
+        <button id="menu" onclick="abrirBarra()">☰</button>
+		<nav id="barra">
+			<ul>
+				<li><a href="./inicio.html">Inicio</a></li>
+				<li><a href="./historia.html">Historia de la F1</a></li>
+				<li><a href="./actual.html">Equipos y pilotos</a></li>
+				<li><a href="./circuitos.html">Circuitos</a></li>
+				<li><a href="./reglamento.html">Reglamento Básico</a></li>
+				<li><a href="./momentos.html">Sucesos Históricos</a></li>
+				<li><a href="./tecnologia.html">Tecnología en la F1</a></li>
+				<li><a href="./rivalidades.html">Rivalidades Históricas</a></li>
+				<li><a href="./whoiswho.html">¿Quién es Quién?</a></li>
+				<li><a href="./contacto.html">Formulario</a></li>
+			</ul>
+		</nav>
+		<header id="titulo">
+			<img class="logo" src="./Inicio/logof1.png">
+			<p id="texto1">Reglamento Básico</p>
+			<img class="logo" src="./Inicio/logof1.png">
+		</header>
+		<div id="listado">
+			<p>La Fórmula 1 se rige por un conjunto de normas fundamentales que aseguran la equidad y la seguridad en la competición. Estas reglas abarcan aspectos esenciales como las banderas y penalizaciones, la clasificación de neumáticos y el sistema de puntuación. La comprensión de estas normas es crucial para todos los participantes y aficionados, ya que influyen en la estrategia de carrera y el rendimiento de los equipos en cada evento.</p>
+			<div class="normas">
+				<h2 onclick="esconder('banderas-penalizaciones')">Banderas y Penalizaciones</h2>
+				<div class="contenido" id="banderas-penalizaciones">					
+					<ul>
+						<li><span>Banderas:</span> Indican diferentes situaciones en el circuito.
+							<ul>
+								<li><span>Bandera Verde:</span> Indica que la pista está libre y se puede correr con normalidad.</li>
+								<li><span>Bandera Amarilla:</span> Advierte sobre un peligro en la pista. Los pilotos deben reducir la velocidad y no adelantar.</li>
+								<li><span>Bandera Roja:</span> La sesión se detiene, generalmente por condiciones peligrosas o accidentes graves.</li>
+								<li><span>Bandera Azul:</span> Un piloto debe ceder el paso a un coche más rápido que le está alcanzando.</li>
+								<li><span>Bandera Negra:</span> Se muestra a un piloto que ha sido descalificado y debe abandonar la carrera.</li>
+							</ul>
+						</li>
+						<li><span>Penalizaciones:</span> Los pilotos pueden recibir penalizaciones de la FIA si infringen el reglamento deportivo. Las sanciones más comunes incluyen las penalizaciones de tiempo durante la carrera y las sanciones de posiciones en la clasificación. También existen otras sanciones, como el Drive-Through, el Stop & Go y la descalificación.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="normas">
+				<h2 onclick="esconder('neumaticos-estrategia')">Tipos de Neumáticos y Estrategia</h2>
+				<div class="contenido" id="neumaticos-estrategia">
+					<ul>
+						<li><span>Neumáticos lisos (slicks):</span> Utilizados en condiciones de seco. Tipos:
+							<ul>
+								<li><span>Blando:</span> Más rápido, pero menos duradero.</li>
+								<li><span>Medio:</span> Compromiso entre duración y rendimiento.</li>
+								<li><span>Duro:</span> Más duradero, pero con menos agarre.</li>
+							</ul>
+						</li>
+						<li><span>Neumáticos de lluvia:</span>
+							<ul>
+								<li><span>Intermedios:</span> Para lluvia ligera.</li>
+								<li><span>De lluvia extrema:</span> Para lluvia intensa.</li>
+							</ul>
+						</li>
+						<li><span>Uso obligatorio de neumáticos:</span> En condiciones de seco, es obligatorio que los pilotos usen al menos dos compuestos de neumáticos diferentes durante la carrera.</li>
+						<li><span>Estrategia:</span> Los equipos deben planificar cuántas paradas realizar en boxes y qué neumáticos usar, considerando el clima, el desgaste y el tráfico en la pista.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="normas">
+				<h2 onclick="esconder('sistema-puntuacion')">Sistema de Puntuación</h2>
+				<div class="contenido" id="sistema-puntuacion">
+					<ul>
+						<li><span>Puntos para los pilotos en carreras normales:</span> Los puntos se otorgan a los pilotos en función de su posición final en la carrera. Se otorgan puntos a los diez primeros pilotos:
+							<ul>
+								<li><span>1er lugar:</span> 25 puntos</li>
+								<li><span>2do lugar:</span> 18 puntos</li>
+								<li><span>3er lugar:</span> 15 puntos</li>
+								<li><span>4to lugar:</span> 12 puntos</li>
+								<li><span>5to lugar:</span> 10 puntos</li>
+								<li><span>6to lugar:</span> 8 puntos</li>
+								<li><span>7mo lugar:</span> 6 puntos</li>
+								<li><span>8vo lugar:</span> 4 puntos</li>
+								<li><span>9no lugar:</span> 2 puntos</li>
+								<li><span>10mo lugar:</span> 1 punto</li>
+							</ul>
+						</li>
+						<li><span>Puntos para las carreras al sprint:</span> En las carreras al sprint, se otorgan puntos a los ocho primeros pilotos:
+							<ul>
+								<li><span>1er lugar:</span> 8 puntos</li>
+								<li><span>2do lugar:</span> 7 puntos</li>
+								<li><span>3er lugar:</span> 6 puntos</li>
+								<li><span>4to lugar:</span> 5 puntos</li>
+								<li><span>5to lugar:</span> 4 puntos</li>
+								<li><span>6to lugar:</span> 3 puntos</li>
+								<li><span>7mo lugar:</span> 2 puntos</li>
+								<li><span>8vo lugar:</span> 1 punto</li>
+							</ul>
+						</li>
+						<li><span>Clasificación de Constructores:</span> Los puntos de los pilotos se suman para determinar el puntaje del equipo (constructor).</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>

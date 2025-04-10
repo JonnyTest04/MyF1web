@@ -1,0 +1,118 @@
+<html>
+	<head>  
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>F1 Inicio</title>
+		<link rel="icon" type="image/x-icon" href="./Inicio/logof1.png">
+		<link rel="stylesheet" type="text/css" href="./f1web.css" media="screen">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	</head>
+	<body id="inicio">
+        <script type="text/javascript">
+            function abrirBarra() {
+                var navegacion = document.getElementById("barra");
+                navegacion.classList.toggle("active");
+        	}
+            function cerrarCookies() {
+                document.getElementById("cookies").style.display = "none";
+            }
+        </script>
+        <div id="cookies">
+            <div id="caja-cookies">
+                <h2>Uso de Cookies</h2>
+                <p>Esta página usa cookies para mejorar la experiencia del usuario. Al continuar navegando, aceptas su uso.</p>
+                <button onclick="cerrarCookies()">Aceptar</button>
+            </div>
+        </div>
+        <button id="menu" onclick="abrirBarra()">☰</button>
+		<nav id="barra">
+			<ul>
+				<li><a href="./inicio.html">Inicio</a></li>
+				<li><a href="./historia.html">Historia de la F1</a></li>
+				<li><a href="./actual.html">Equipos y pilotos</a></li>
+				<li><a href="./circuitos.html">Circuitos</a></li>
+				<li><a href="./reglamento.html">Reglamento Básico</a></li>
+				<li><a href="./momentos.html">Sucesos Históricos</a></li>
+				<li><a href="./tecnologia.html">Tecnología en la F1</a></li>
+				<li><a href="./rivalidades.html">Rivalidades Históricas</a></li>
+				<li><a href="./whoiswho.html">¿Quién es Quién?</a></li>
+				<li><a href="./contacto.html">Formulario</a></li>
+			</ul>
+		</nav>
+        <header id="titulo">
+			<img class="logo" src="./Inicio/logof1.png">
+			<p id="texto1">Inicio</p>
+			<img class="logo" src="./Inicio/logof1.png">
+		</header>
+        <div id="coches">
+            <img src="./Equipos/mercedes.png">
+            <img src="./Equipos/redbull.png">
+            <img src="./Equipos/ferrari.png">
+            <img src="./Equipos/mclaren.png">
+            <img src="./Equipos/sauber.png">
+            <img src="./Equipos/williams.png">
+            <img src="./Equipos/rb.png">
+            <img src="./Equipos/haas.png">
+            <img src="./Equipos/alpine.png">
+            <img src="./Equipos/astonmartin.png">
+            <img src="./Equipos/mercedes.png">
+            <img src="./Equipos/redbull.png">
+            <img src="./Equipos/ferrari.png">
+            <img src="./Equipos/mclaren.png">
+        </div>
+        <table id="opciones">
+            <tr>
+                <td id="casilla11"><button onclick="document.location='./historia.html'"></button></td>
+                <td id="casilla12"><button onclick="document.location='./actual.html'"></button></td>
+                <td id="casilla13"><button onclick="document.location='./circuitos.html'"></button></td>
+            </tr>
+            <tr>
+                <td>
+                    <div>Historia de la F1</div>
+                </td>
+                <td>
+                    <div>Equipos y Pilotos</div>
+                </td>
+                <td>
+                    <div>Circuitos</div>
+                </td>
+            </tr>
+            <tr>
+                <td id="casilla21"><button onclick="document.location='./reglamento.html'"></button></td>
+                <td id="casilla22"><button onclick="document.location='./momentos.html'"></button></td>
+                <td id="casilla23"><button onclick="document.location='./tecnologia.html'"></button></td>
+            </tr>
+            <tr>
+                <td>
+                    <div>Reglamento Básico</div>
+                </td>
+                <td>
+                    <div>Sucesos Históricos</div>
+                </td>
+                <td>
+                    <div>Tecnología en la F1</div>
+                </td>
+            </tr>
+            <tr>
+                <td id="casilla31"><button onclick="document.location='./rivalidades.html'"></button></td>
+                <td id="casilla32"><button onclick="document.location='./whoiswho.html'"></button></td>
+                <td id="casilla33"><button onclick="document.location='./contacto.html'"></button></td>
+            </tr>
+            <tr>
+                <td>
+                    <div>Rivalidades Históricas</div>
+                </td>
+                <td>
+                    <div>¿Quién es Quién?</div>
+                </td>
+                <td>
+                    <div>Formulario</div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

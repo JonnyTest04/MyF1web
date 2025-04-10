@@ -1,0 +1,149 @@
+<html>
+	<head>  
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>F1 Tecnologia</title>
+		<link rel="icon" type="image/x-icon" href="./Inicio/logof1.png">
+		<link rel="stylesheet" type="text/css" href="./f1web.css" media="screen">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	</head>
+	<body id="tecnologia">
+        <script type="text/javascript">
+            function abrirBarra() {
+            	var navegacion = document.getElementById("barra");
+            	navegacion.classList.toggle("active");
+        	}
+			function esconder(id) {
+    			const contenido = document.getElementById(id);
+    			if (contenido.style.display === "block") {
+        			contenido.style.display = "none";
+    			} else {
+        			contenido.style.display = "block";
+    			}
+			}
+        </script>
+        <button id="menu" onclick="abrirBarra()">☰</button>
+		<nav id="barra">
+			<ul>
+				<li><a href="./inicio.html">Inicio</a></li>
+				<li><a href="./historia.html">Historia de la F1</a></li>
+				<li><a href="./actual.html">Equipos y pilotos</a></li>
+				<li><a href="./circuitos.html">Circuitos</a></li>
+				<li><a href="./reglamento.html">Reglamento Básico</a></li>
+				<li><a href="./momentos.html">Momentos Icónicos</a></li>
+				<li><a href="./tecnologia.html">Tecnología en la F1</a></li>
+				<li><a href="./rivalidades.html">Rivalidades Históricas</a></li>
+				<li><a href="./whoiswho.html">¿Quién es Quién?</a></li>
+				<li><a href="./contacto.html">Formulario</a></li>
+			</ul>
+		</nav>
+		<header id="titulo">
+			<img class="logo" src="./Inicio/logof1.png">
+			<p id="texto1">Tecnología en la F1</p>
+			<img class="logo" src="./Inicio/logof1.png">
+		</header>
+		<div id="etapas">
+			<p>La Fórmula 1 ha experimentado una evolución tecnológica constante, especialmente en áreas clave como la aerodinámica, los motores, el Sistema de Reducción de Arrastre (DRS) y la seguridad de los pilotos.</p>
+			<div class="seccion">
+				<h2 onclick="esconder('aerodinamica')">1. Aerodinámica</h2>
+				<div class="contenido" id="aerodinamica">
+					<p>La aerodinámica ha sido un factor crucial en el rendimiento de los monoplazas de Fórmula 1. Desde los años 1960, los avances en esta área han sido significativos, con un enfoque en la optimización del flujo de aire y la generación de carga aerodinámica.</p>
+					<h3>Años 1960: Introducción de los Primeros Alerones</h3>
+					<p><span>Primeros alerones:</span> En esta década, los equipos comenzaron a experimentar con la aerodinámica, introduciendo los primeros alerones. Estos dispositivos permitieron aumentar la carga aerodinámica, mejorando la estabilidad y el agarre de los coches.</p>
+					<p><span>Flujo de aire:</span> Los pilotos y diseñadores empezaron a comprender cómo el flujo de aire sobre el coche afectaba su rendimiento. Esto marcó el inicio de la aerodinámica como una disciplina clave en el diseño de los monoplazas.</p>
+					<p><span>Diseños rudimentarios:</span> Los alerones eran simples y estaban montados en posiciones altas, lo que a veces causaba problemas de estabilidad a altas velocidades.</p>	
+					<h3>Años 1970: Alerones Frontales y Traseros</h3>
+					<p><span>Alerones frontales y traseros:</span> Durante esta década, el uso de alerones frontales y traseros se generalizó. Estos dispositivos se volvieron más sofisticados, con diseños que mejoraron el agarre, especialmente en curvas rápidas.</p>
+					<p><span>Carga aerodinámica equilibrada:</span> Los equipos comenzaron a buscar un equilibrio entre el alerón delantero y el trasero para optimizar el rendimiento en diferentes tipos de curvas.</p>
+					<p><span>Materiales más ligeros:</span> Se empezaron a utilizar materiales más ligeros, como el aluminio, para construir los alerones, lo que permitió reducir el peso total del coche.</p>	
+					<h3>Años 1980: Efecto Suelo y Aerodinámica Radical</h3>
+					<p><span>Efecto suelo:</span> Esta década vio la introducción del "efecto suelo", una técnica que utilizaba el flujo de aire debajo del coche para generar succión, aumentando la carga aerodinámica y permitiendo mayores velocidades en las rectas y curvas.</p>
+					<p><span>Alas laterales y difusores:</span> Los equipos incorporaron alas laterales y difusores para canalizar el flujo de aire debajo del coche, maximizando el efecto suelo.</p>
+					<p><span>Problemas de seguridad:</span> El efecto suelo generó preocupaciones de seguridad, ya que los coches perdían carga aerodinámica de manera abrupta si el flujo de aire se interrumpía, lo que llevó a accidentes graves. Como resultado, la FIA prohibió el efecto suelo a finales de la década.</p>	
+					<h3>Años 1990: Túneles de Viento y Simulaciones por Computadora</h3>
+					<p><span>Tecnología avanzada:</span> En esta década, los equipos comenzaron a utilizar túneles de viento avanzados y simulaciones por computadora para diseñar formas aerodinámicas más precisas. Esto permitió optimizar el flujo de aire alrededor del coche con un nivel de detalle sin precedentes.</p>
+					<p><span>Alerones más complejos:</span> Los alerones se volvieron más complejos, con múltiples elementos y perfiles diseñados para maximizar la carga aerodinámica y minimizar la resistencia al aire.</p>
+					<p><span>Materiales compuestos:</span> Se introdujeron materiales compuestos como la fibra de carbono, que permitieron construir estructuras aerodinámicas más ligeras y resistentes.</p>	
+					<h3>2000-2009: Optimización y Eficiencia</h3>
+					<p><span>Materiales más ligeros:</span> Continuó el uso de materiales avanzados como la fibra de carbono, lo que permitió construir monoplazas más ligeros y rígidos, mejorando la eficiencia aerodinámica.</p>
+					<p><span>Diseños optimizados:</span> Los equipos utilizaron túneles de viento y simulaciones por computadora para optimizar el flujo de aire alrededor del coche, resultando en diseños más eficientes y rápidos.</p>
+					<p><span>Regulaciones de la FIA (2009):</span> En 2009, la FIA introdujo cambios significativos en las regulaciones aerodinámicas, simplificando los diseños de los alerones para reducir la carga aerodinámica y promover carreras más competitivas.</p>	
+					<h3>2010-2019: Innovación y Adaptación</h3>
+					<p><span>Introducción del DRS (2011):</span> El Sistema de Reducción de Arrastre (DRS) se implementó en 2011 para facilitar los adelantamientos, permitiendo a los pilotos ajustar el alerón trasero y reducir la resistencia aerodinámica en zonas específicas de la pista.</p>
+					<p><span>Configuraciones adaptativas:</span> Los equipos comenzaron a desarrollar configuraciones aerodinámicas específicas para cada pista, optimizando el rendimiento en función de las características de cada circuito.</p>
+					<p><span>Nuevos materiales y diseños:</span> Continuó el uso de materiales avanzados como la fibra de carbono, y los diseños aerodinámicos se volvieron más sofisticados, con un enfoque en la eficiencia y la reducción de la resistencia al aire.</p>	
+					<h3>2020 en adelante: Recuperación del Efecto Suelo</h3>
+					<p><span>Recuperación del efecto suelo (2022):</span> En 2022, la FIA reintrodujo el efecto suelo con nuevas regulaciones que permiten a los coches generar carga aerodinámica de manera más eficiente. Esto ha llevado a un aumento en el rendimiento y la estabilidad de los monoplazas.</p>
+					<p><span>Diseños más seguros:</span> Los nuevos diseños aerodinámicos también han incorporado características de seguridad mejoradas, protegiendo a los pilotos en caso de impacto.</p>
+				</div>
+			</div>
+			<div class="seccion">
+				<h2 onclick="esconder('motores')">2. Evolución de los Motores en la Fórmula 1</h2>
+				<div class="contenido" id="motores">
+					<p>Los motores en la Fórmula 1 han evolucionado desde configuraciones simples hasta sistemas altamente sofisticados.</p>	
+					<h3>Años 1950</h3>
+					<p><span>Motores de 4 cilindros y V8:</span> En los primeros años de la Fórmula 1, los motores eran relativamente simples, con configuraciones de 4 cilindros en línea y V8. La potencia era limitada, oscilando entre 150 y 250 hp.</p>
+					<p><span>Combustible:</span> Se utilizaba principalmente gasolina convencional, y la inyección de combustible no era común.</p>	
+					<h3>Años 1960</h3>
+					<p><span>Introducción del V12:</span> Durante esta década, los motores V12 comenzaron a ganar popularidad debido a su capacidad para generar mayores potencias. Estos motores eran más complejos y costosos, pero ofrecían un mejor rendimiento.</p>
+					<p><span>Inyección de combustible:</span> Se introdujo la inyección de combustible, lo que permitió una mayor eficiencia y potencia.</p>	
+					<h3>Años 1970</h3>
+					<p><span>Turboalimentación:</span> A mediados de la década de 1970, los motores turboalimentados comenzaron a aparecer en la Fórmula 1. Estos motores, que utilizaban turbocompresores para aumentar la potencia, superaron los 1,000 hp en algunos casos.</p>
+					<p><span>Motores atmosféricos:</span> Aunque los motores turboalimentados ganaron popularidad, los motores atmosféricos (sin turbo) continuaron utilizándose, especialmente en equipos con menos recursos.</p>	
+					<h3>Años 1980</h3>
+					<p><span>Dominio de los motores turbo:</span> Los motores turboalimentados dominaron la Fórmula 1 durante esta década, con potencias que superaban los 1,000 hp. Sin embargo, la FIA introdujo regulaciones para limitar la capacidad de los motores turbo a 1.5 litros.</p>
+					<p><span>Fiabilidad:</span> A medida que los motores turbo se volvieron más potentes, la fiabilidad se convirtió en un problema, lo que llevó a los equipos a buscar un equilibrio entre potencia y durabilidad.</p>	
+					<h3>Años 1990</h3>
+					<p><span>Prohibición de los motores turbo:</span> En 1989, la FIA prohibió los motores turbo, lo que llevó a un regreso a los motores atmosféricos. Los motores de 3.0 litros V10 y V12 se convirtieron en la norma.</p>
+					<p><span>Enfoque en la fiabilidad:</span> Durante esta década, los equipos se centraron en mejorar la fiabilidad de los motores, reduciendo las fallas mecánicas y aumentando la durabilidad.</p>	
+					<h3>2006-2013: Era de los Motores V8</h3>
+					<p><span>Motores V8 de 2.4 litros:</span> En 2006, la FIA redujo la capacidad de los motores a 2.4 litros y limitó las configuraciones a V8. Estos motores eran más eficientes y fiables, con un enfoque en la reducción de costos y la igualdad competitiva.</p>
+					<p><span>Introducción del KERS (2009):</span> En 2009, se introdujo el Sistema de Recuperación de Energía Cinética (KERS), que permitía a los coches recuperar energía durante la frenada y utilizarla para aumentar la potencia. Este fue el primer paso hacia la era híbrida en la Fórmula 1.</p>	
+					<h3>2014 en adelante: Era de los Motores Híbridos</h3>
+					<p><span>Motores V6 turbo híbridos:</span> En 2014, la Fórmula 1 adoptó motores V6 turbo híbridos de 1.6 litros, que combinaban un motor de combustión interna con un sistema de recuperación de energía (ERS). Esto permitió a los equipos ser más eficientes en el consumo de combustible y aumentar la potencia.</p>
+					<p><span>Reducción de costos:</span> La introducción de motores híbridos también buscó reducir los costos de desarrollo y mejorar la sostenibilidad en el deporte.</p>
+					<p><span>Aumento de la potencia:</span> La combinación de la tecnología híbrida y el turbocompresor llevó a un aumento significativo de la potencia, con algunos coches alcanzando más de 900 hp.</p>
+				</div>
+			</div>
+			<div class="seccion">
+				<h2 onclick="esconder('drs')">3. DRS (Sistema de Reducción de Arrastre)</h2>
+				<div class="contenido" id="drs">
+					<h3>2011: Implementación del DRS</h3>
+					<p><span>Objetivo:</span> El DRS se implementó para facilitar los adelantamientos en las carreras, permitiendo a los pilotos ajustar el alerón trasero y reducir la resistencia aerodinámica en zonas específicas de la pista.</p>
+					<p><span>Funcionamiento:</span> El DRS se activa en las zonas designadas cuando un piloto se encuentra a menos de un segundo de otro piloto al pasar por un punto de detección.</p>	
+					<h3>2011-2012: Establecimiento de Zonas de DRS</h3>
+					<p><span>Ajustes iniciales:</span> Durante los primeros años, se realizaron ajustes en las zonas de DRS y en la activación del sistema para asegurar un equilibrio entre la competitividad y la seguridad.</p>
+					<p><span>Regulación:</span> Las zonas de DRS se establecieron en función del diseño de cada circuito y se ajustaron de acuerdo con la retroalimentación de los pilotos y equipos.</p>	
+					<h3>Desde 2013: Ajustes en las Regulaciones</h3>
+					<p><span>Regulaciones actualizadas:</span> La FIA continuó ajustando las regulaciones del DRS para mejorar la competencia y la emoción de las carreras. Se implementaron cambios en la cantidad de zonas de DRS y en los puntos de detección.</p>
+					<p><span>Impacto en la carrera:</span> El DRS se ha convertido en una herramienta estratégica en las carreras, permitiendo a los pilotos realizar adelantamientos más efectivos y emocionantes.</p>
+				</div>
+			</div>
+			<div class="seccion">
+				<h2 onclick="esconder('seguridad')">4. Seguridad de los Pilotos</h2>
+				<div class="contenido" id="seguridad">
+					<h3>Cascos</h3>
+					<p><span>Evolución continua:</span> Desde los años 1980, los cascos han evolucionado significativamente en términos de diseño y materiales, proporcionando una mejor protección contra impactos y fuego. Los cascos modernos incluyen tecnología avanzada de absorción de impactos y viseras de alta resistencia.</p>	
+					<h3>HANS (Head and Neck Support)</h3>
+					<p><span>Introducido en 2003:</span> El sistema HANS proporciona soporte a la cabeza y el cuello del piloto en caso de accidente, reduciendo el riesgo de lesiones por latigazo cervical. Su uso se ha vuelto obligatorio en todas las categorías de competición.</p>	
+					<h3>Halo</h3>
+					<p><span>Implementado en 2018:</span> El Halo es una estructura de protección que se coloca alrededor del cockpit del piloto, diseñada para proteger su cabeza en caso de un impacto lateral. Su introducción ha salvado vidas y se ha convertido en un estándar de seguridad en todos los monoplazas.</p>	
+					<h3>Coches de Seguridad</h3>
+					<p><span>Uso en carreras:</span> Los coches de seguridad se utilizan para controlar la carrera en caso de accidentes o condiciones climáticas adversas. Su introducción ha mejorado la seguridad general en las carreras de Fórmula 1.</p>	
+					<h3>Estructura del Monoplaza</h3>
+					<p><span>Zonas de deformación:</span> La estructura del monoplaza ha sido mejorada para absorber energía en caso de impacto. Las zonas de deformación se diseñan específicamente para colapsar y proteger al piloto.</p>	
+					<h3>Sistema de Protección Lateral</h3>
+					<p><span>Introducido en los años 2010:</span> Este sistema proporciona protección adicional en caso de impactos laterales, reduciendo el riesgo de lesiones graves.</p>	
+					<h3>Monitores de Salud</h3>
+					<p><span>Monitoreo en tiempo real:</span> Los sistemas de monitoreo en tiempo real permiten a los equipos seguir la salud del piloto durante la carrera, proporcionando información vital sobre su estado físico y emocional.</p>	
+					<h3>Monos Ignífugos</h3>
+					<p><span>Desarrollo de materiales:</span> Los monos ignífugos han mejorado en términos de resistencia al fuego y comodidad, proporcionando una mejor protección a los pilotos en caso de incendio.</p>	
+				</div>
+			</div>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,249 @@
+<html>
+	<head>  
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>F1 Who Is Who?</title>
+		<link rel="icon" type="image/x-icon" href="./Inicio/logof1.png">
+		<link rel="stylesheet" type="text/css" href="./f1web.css" media="screen">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	</head>
+	<body id="whoiswho">
+		<script type="text/javascript">
+			function abrirBarra() {
+            	var navegacion = document.getElementById("barra");
+            	navegacion.classList.toggle("active");
+        	}
+			let cantidadColumnas = 8;
+			var ancho = window.matchMedia("(max-width: 960px)");
+			function comprobarAncho(dimensiones) {
+  				if (dimensiones.matches) {
+    			cantidadColumnas = 4;
+  				} else {
+    			cantidadColumnas = 8;
+  				}
+				inicio();
+			}
+			ancho.addListener(comprobarAncho);
+			function eliminar(x, y) {
+				document.getElementById(x).style.display="none";
+				document.getElementById(y).style.display="block";
+			}
+			function aparecer(x, y) {
+				document.getElementById(y).style.display="none";
+				document.getElementById(x).style.display="block";
+			}
+			function reiniciar(w, x, y, z) {
+				var a = document.getElementsByClassName(w);
+				for (var i = 0; i < a.length; i++) {
+				a[i].style.display = "block";
+				}
+				var b = document.getElementsByClassName(x);
+				for (var i = 0; i < b.length; i++) {
+				b[i].style.display = "none";
+				}
+				var c = document.getElementsByClassName(y);
+				for (var i = 0; i < c.length; i++) {
+				c[i].style.display = "none";
+				}
+				var d = document.getElementsByClassName(z);
+				for (var i = 0; i < d.length; i++) {
+				d[i].style.display = "block";
+				}
+				document.getElementById("tuyo").style.display="none";
+				document.getElementById("interrogante").style.display="block";
+				document.getElementById("nombretuyo").textContent="";
+			}
+			function ocultar(w, x, y, z) {
+				var e = document.getElementsByClassName(w);
+				for (var i = 0; i < e.length; i++) {
+				e[i].style.display = "none";
+				}
+				var f = document.getElementsByClassName(x);
+				for (var i = 0; i < f.length; i++) {
+				f[i].style.display = "block";
+				}
+				document.getElementById(y).style.display="none";
+				document.getElementById(z).style.display="inline-block";
+			}
+			function mostrar(w, x, y, z) {
+				var e = document.getElementsByClassName(w);
+				for (var i = 0; i < e.length; i++) {
+				e[i].style.display = "block";
+				}
+				var f = document.getElementsByClassName(x);
+				for (var i = 0; i < f.length; i++) {
+				f[i].style.display = "none";
+				}
+				document.getElementById(y).style.display="inline-block";
+				document.getElementById(z).style.display="none";
+			}
+			var pilotos=[                   
+                    ['LEWIS HAMILTON', './Pilotos/hamilton.jpg', './Pilotos/hamilton.gif', 'hamilton'],
+                    ['MAX VERSTAPPEN', './Pilotos/verstappen.jpg', './Pilotos/verstappen.gif', 'verstappen'],
+                    ['CARLOS SAINZ', './Pilotos/sainz.jpg', './Pilotos/sainz.gif', 'sainz'],
+                    ['LANDO NORRIS', './Pilotos/norris.jpg', './Pilotos/norris.gif', 'norris'],
+                    ['EL NANO', './Pilotos/alonso.jpg', './Pilotos/alonso.gif', 'alonso'],
+                    ['GEORGE RUSSELL', './Pilotos/russell.jpg', './Pilotos/russell.gif', 'russell'],
+                    ['CHECO PEREZ', './Pilotos/perez.jpg', './Pilotos/perez.gif', 'perez'],
+                    ['CHARLES LECLERC', './Pilotos/leclerc.jpg', './Pilotos/leclerc.gif', 'leclerc'],
+                    ['DANIEL RICCIARDO', './Pilotos/ricciardo.jpg', './Pilotos/ricciardo.gif', 'ricciardo'],
+                    ['ESTEBAN OCON', './Pilotos/ocon.jpg', './Pilotos/ocon.gif', 'ocon'],
+                    ['PIERRE GASLY', './Pilotos/gasly.jpg', './Pilotos/gasly.gif', 'gasly'],
+                    ['SEBASTIAN VETTEL', './Pilotos/vettel.jpg', './Pilotos/vettel.gif', 'vettel'],
+                    ['NICHOLAS LATIFI', './Pilotos/latifi.jpg', './Pilotos/latifi.gif', 'latifi'],
+                    ['VALTTERI BOTTAS', './Pilotos/bottas.jpg', './Pilotos/bottas.gif', 'bottas'],
+                    ['MICK SCHUMACHER', './Pilotos/schumacher.jpg', './Pilotos/schumacher.gif', 'schumacher'],
+                    ['YUKI TSUNODA', './Pilotos/tsunoda.jpg', './Pilotos/tsunoda.gif', 'tsunoda'],
+                    ['LANCE STROLL', './Pilotos/stroll.jpg', './Pilotos/stroll.gif', 'stroll'],
+                    ['ALEXANDER ALBON', './Pilotos/albon.jpg', './Pilotos/albon.gif', 'albon'],
+                    ['ZHOU GUANYU', './Pilotos/zhou.jpg', './Pilotos/zhou.gif', 'zhou'],
+                    ['KEVIN MAGNUSSEN', './Pilotos/magnussen.jpg', './Pilotos/magnussen.gif', 'magnussen'],
+					['LOGAN SARGEANT', './Pilotos/sargeant.jpg', './Pilotos/sargeant.gif', 'sargeant'],
+					['NICO HULKENBERG', './Pilotos/hulkenberg.jpg', './Pilotos/hulkenberg.gif', 'hulkenberg'],
+					['OSCAR PIASTRI', './Pilotos/piastri.jpg', './Pilotos/piastri.gif', 'piastri'],
+					['NYCK DE VRIES', './Pilotos/devries.jpg', './Pilotos/devries.gif', 'devries'],
+					['LIAM LAWSON', './Pilotos/lawson.jpg', './Pilotos/lawson.gif', 'lawson'],
+					['FRANCO COLAPINTO', './Pilotos/colapinto.jpg', './Pilotos/colapinto.gif', 'colapinto'],
+					['OLIVER BEARMAN', './Pilotos/bearman.jpg', './Pilotos/bearman.gif', 'bearman'],
+					['JACK DOOHAN', './Pilotos/doohan.jpg', './Pilotos/doohan.gif', 'doohan'],
+					['GABRIEL BORTOLETO', './Pilotos/bortoleto.jpg', './Pilotos/bortoleto.gif', 'bortoleto'],
+					['ISACK HADJAR', './Pilotos/hadjar.jpg', './Pilotos/hadjar.gif', 'hadjar'],
+					['ANDREA KIMI ANTONELLI', './Pilotos/antonelli.jpg', './Pilotos/antonelli.gif', 'antonelli'],
+					['NIKITA MAZEPIN', './Pilotos/mazepin.jpg', './Pilotos/mazepin.gif', 'mazepin']
+            ];
+			function inicio(){
+				var html = "";
+				var i = 0;
+				for(var piloto of pilotos)
+				{
+					if(i%cantidadColumnas == 0)
+					{
+						html += "<tr>";
+					}
+					var boton = i + 1;
+					html += '<td><div onclick="eliminar(\''+piloto[3]+'\', \'boton'+boton+'\')"><img class="pilotos" id="'+piloto[3]+'" src="'+piloto[1]+'"></div><button class="nombres" onclick="aparecer(\''+piloto[3]+'\', \'boton'+boton+'\')" id="boton'+boton+'">'+piloto[0]+'</button></td>';
+					i = boton;
+					if(i%cantidadColumnas == 0)
+					{
+						html += '</tr>';
+					}
+				}
+				document.getElementById('tabla').innerHTML = html;
+			}
+			function juego(){
+				var piloto_elegido = pilotos[Math.floor(Math.random() * pilotos.length)];
+				document.getElementById("tuyo").style.display="block";
+				document.getElementById("interrogante").style.display="none";
+				document.getElementById("tuyo").src = piloto_elegido[1];
+				document.getElementById("tuyo").title = piloto_elegido[0];
+				document.getElementById("nombretuyo").textContent = piloto_elegido[0];
+				Swal.fire({
+  				title: piloto_elegido[0],
+				html:
+				'¡Te ha tocado a ' + piloto_elegido[0] + '!' + '<br>Ahora intenta averiguar el personaje de tu adversario con preguntas.',
+				imageUrl: piloto_elegido[2],
+				imageWidth: 450,
+				imageHeight: 253,
+				imageAlt: piloto_elegido[0],
+				timer: 8000,
+  				timerProgressBar: true,
+				})
+            } 
+			function normas(){
+				var directores=[
+					['EDUARDO FREITAS', './FIA/freitas.jpg'],
+                    ['NIELS WITTICH', './FIA/wittich.jpg'],
+                    ['MICHAEL MASI', './FIA/masi.jpg'],
+                    ['CHARLIE WHITING', './FIA/whiting.jpg'],
+					['RUI MARQUES', './FIA/marques.jpg']
+				];
+				var director_elegido = directores[Math.floor(Math.random() * directores.length)];
+				Swal.fire({
+  				title: director_elegido[0],
+				html:
+				'El Director de Carrera ' + director_elegido[0] + ' se encargará del correcto cumplimiento de las normas en esta partida.' + 
+				'<br>- Está prohibido mentir.' + 
+				'<br>- Por cada pregunta, se deberá marcar una casilla en "Cantidad de preguntas" hasta llegar a un máximo de 5 preguntas.' + 
+				'<br>- Una vez hecha la pregunta, esta NO podrá ser cambiada.' + 
+				'<br>- La FIA no se hace responsable de la ambigüedad de las preguntas, aun así se pide a los jugadores que estas sean lo más precisas posible para evitar disgustos.',
+				imageUrl: director_elegido[1],
+				imageHeight: 225,
+				imageAlt: director_elegido[0],
+				})
+			}
+			window.onload = function(){
+				comprobarAncho(ancho);
+				inicio();
+			};
+		</script>
+		<button id="menu" onclick="abrirBarra()">☰</button>
+		<nav id="barra">
+			<ul>
+				<li><a href="./inicio.html">Inicio</a></li>
+				<li><a href="./historia.html">Historia de la F1</a></li>
+				<li><a href="./actual.html">Equipos y pilotos</a></li>
+				<li><a href="./circuitos.html">Circuitos</a></li>
+				<li><a href="./reglamento.html">Reglamento Básico</a></li>
+				<li><a href="./momentos.html">Momentos Icónicos</a></li>
+				<li><a href="./tecnologia.html">Tecnología en la F1</a></li>
+				<li><a href="./rivalidades.html">Rivalidades Históricas</a></li>
+				<li><a href="./whoiswho.html">¿Quién es Quién?</a></li>
+				<li><a href="./contacto.html">Formulario</a></li>
+			</ul>
+		</nav>
+		<header id="titulo">
+			<img class="logo" src="./Inicio/logof1.png">
+			<p id="texto1">¿quién es quién?</p>
+			<img class="logo" src="./Inicio/logof1.png">
+		</header>	
+		<div id="juego">
+			<button onclick="normas()" class="pequeno">Normas</button>
+			<button onclick="reiniciar('pilotos', 'nombres', 'ticks', 'correcto')" class="grande">Reiniciar</button>
+			<button onclick="juego()" class="grande">Jugar</button>
+			<button onclick="ocultar('pilotos', 'nombres', 'botonnombres', 'botonfotos')" id="botonnombres" class="pequeno">Nombres</button>
+			<button onclick="mostrar('pilotos', 'nombres', 'botonnombres', 'botonfotos')" id="botonfotos" class="pequeno">Fotos</button>
+		</div>
+		<table id="tabla">
+		</table>
+		<div id="abajo">
+			<div id="separada">
+				<div id="fotoadivinar">
+					<img id="interrogante" src="./Inicio/interrogante.png">
+					<img id="tuyo" src="">
+				</div>
+				<div id="nombretuyo"></div>Pilotos/
+			</div>
+			<div id="aleatoria">
+				<div id="subtitulo">cantidad de preguntas</div>
+				<table id="intentos">
+					<tr>
+						<td>
+							<img class="ticks" onclick="aparecer('boton1000', 'tick1')" id="tick1" src="./Inicio/tick.jpg">
+							<button class="correcto" onclick="eliminar('boton1000', 'tick1')" id="boton1000"></button>
+						</td>
+						<td>
+							<img class="ticks" onclick="aparecer('boton1001', 'tick2')" id="tick2" src="./Inicio/tick.jpg">
+							<button class="correcto" onclick="eliminar('boton1001', 'tick2')" id="boton1001"></button>
+						</td>
+						<td>
+							<img class="ticks" onclick="aparecer('boton1002', 'tick3')" id="tick3" src="./Inicio/tick.jpg">
+							<button class="correcto" onclick="eliminar('boton1002', 'tick3')" id="boton1002"></button>
+						</td>
+						<td>
+							<img class="ticks" onclick="aparecer('boton1003', 'tick4')" id="tick4" src="./Inicio/tick.jpg">
+							<button class="correcto" onclick="eliminar('boton1003', 'tick4')" id="boton1003"></button>
+						</td>
+						<td>
+							<img class="ticks" onclick="aparecer('boton1004', 'tick5')" id="tick5" src="./Inicio/tick.jpg">
+							<button class="correcto" onclick="eliminar('boton1004', 'tick5')" id="boton1004"></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

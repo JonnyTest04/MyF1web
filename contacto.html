@@ -1,0 +1,187 @@
+<html>
+	<head>  
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>F1 Contacto</title>
+		<link rel="icon" type="image/x-icon" href="./Inicio/logof1.png">
+		<link rel="stylesheet" type="text/css" href="./f1web.css" media="screen">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	</head>
+	<body id="contacto">
+        <script type="text/javascript">
+            function abrirBarra() {
+            	var navegacion = document.getElementById("barra");
+            	navegacion.classList.toggle("active");
+        	}
+			function validarFormulario(event) {
+            	let nombre = document.getElementById("nombre").value;
+            	let email = document.getElementById("email").value;
+            	let comentarios = document.getElementById("comentarios").value;
+            	let errorNombre = document.getElementById("errorNombre");
+            	let errorEmail = document.getElementById("errorEmail");
+            	let errorComentarios = document.getElementById("errorComentarios");
+            	let caracteresProhibidos = /[$@#]/;
+            	let empiezaConNumero = /^[0-9]/;
+            	let valido = true;
+            	if (nombre.trim() === "") {
+                	errorNombre.textContent = "El nombre no puede estar vacío.";
+                	valido = false;
+            	} else if (caracteresProhibidos.test(nombre)) {
+                	errorNombre.textContent = "El nombre no puede contener $, @ o #.";
+                	valido = false;
+            	} else if (empiezaConNumero.test(nombre)) {
+                	errorNombre.textContent = "El nombre no puede comenzar con un número.";
+                	valido = false;
+            	} else {
+                	errorNombre.textContent = "";
+            	}
+            	if (email.trim() === "") {
+                	errorEmail.textContent = "El correo no puede estar vacío.";
+                	valido = false;
+            	} else {
+                	errorEmail.textContent = "";
+            	}
+            	if (comentarios && caracteresProhibidos.test(comentarios)) {
+                	errorComentarios.textContent = "No uses $, @ o # en los comentarios.";
+                	valido = false;
+            	} else {
+                	errorComentarios.textContent = "";
+            	}
+            	if (!valido) {
+                	event.preventDefault();
+            	} else {
+                	enviarFormulario(event);
+            	}
+        	}
+			function enviarFormulario(evento){
+				evento.preventDefault();
+				Swal.fire({
+  				position: "top-end",
+ 				icon: "success",
+  				title: "¡Formulario enviado!",
+  				showConfirmButton: false,
+  				timer: 1500
+				});
+				setTimeout(() => {
+                document.getElementById("formulario").submit();
+            	}, 3000);
+			}
+        </script>
+        <button id="menu" onclick="abrirBarra()">☰</button>
+		<nav id="barra">
+			<ul>
+				<li><a href="./inicio.html">Inicio</a></li>
+				<li><a href="./historia.html">Historia de la F1</a></li>
+				<li><a href="./actual.html">Equipos y pilotos</a></li>
+				<li><a href="./circuitos.html">Circuitos</a></li>
+				<li><a href="./reglamento.html">Reglamento Básico</a></li>
+				<li><a href="./momentos.html">Sucesos Históricos</a></li>
+				<li><a href="./tecnologia.html">Tecnología en la F1</a></li>
+				<li><a href="./rivalidades.html">Rivalidades Históricas</a></li>
+				<li><a href="./whoiswho.html">¿Quién es Quién?</a></li>
+				<li><a href="./contacto.html">Formulario</a></li>
+			</ul>
+		</nav>
+		<header id="titulo">
+			<img class="logo" src="./Inicio/logof1.png">
+			<p id="texto1">Piloto Favorito</p>
+			<img class="logo" src="./Inicio/logof1.png">
+		</header>
+		<form action="piloto_favorito.php" id="formulario" method="POST" onsubmit="return validarFormulario(event)" target="_blank">
+			<div class="campo">
+				<label for="nombre">Nombre:</label><input type="text" id="nombre" name="nombre" required><span class="error" id="errorNombre"></span>
+			</div>
+			<div class="campo">
+				<label for="email">Correo Electrónico:</label><input type="email" id="email" name="email" required><span class="error" id="errorEmail"></span>
+			</div>
+			<div class="campo">
+				<label for="equipo">Selecciona tu equipo favorito:</label>
+				<select id="equipo" name="equipo">
+					<option value="mclaren">McLaren</option>
+					<option value="ferrari">Ferrari</option>
+					<option value="redbull">Red Bull</option>
+					<option value="mercedes">Mercedes</option>
+					<option value="astonmartin">Aston Martin</option>
+					<option value="alpine">Alpine</option>
+					<option value="haas">Haas</option>
+					<option value="rb">RB</option>
+					<option value="williams">Williams</option>
+					<option value="sauber">Sauber</option>
+				</select>
+			</div>
+			<div class="campo">
+				<label>Selecciona tus pilotos favoritos (puedes elegir varios):</label><br>
+				<div class="favs">
+					<div class="pilotosf1">
+						<div><input type="checkbox" id="norris" name="pilotos[]" value="Lando Norris"><label for="norris">Lando Norris</label></div>
+						<div><input type="checkbox" id="leclerc" name="pilotos[]" value="Charles Leclerc"><label for="leclerc">Charles Leclerc</label></div>
+						<div><input type="checkbox" id="verstappen" name="pilotos[]" value="Max Verstappen"><label for="verstappen">Max Verstappen</label></div>
+						<div><input type="checkbox" id="russell" name="pilotos[]" value="George Russell"><label for="russell">George Russell</label></div>
+						<div><input type="checkbox" id="alonso" name="pilotos[]" value="Fernando Alonso"><label for="alonso">Fernando Alonso</label></div>
+						<div><input type="checkbox" id="gasly" name="pilotos[]" value="Pierre Gasly"><label for="gasly">Pierre Gasly</label></div>
+						<div><input type="checkbox" id="bearman" name="pilotos[]" value="Oliver Bearman"><label for="bearman">Oliver Bearman</label></div>
+						<div><input type="checkbox" id="tsunoda" name="pilotos[]" value="Yuki Tsunoda"><label for="tsunoda">Yuki Tsunoda</label></div>
+						<div><input type="checkbox" id="sainz" name="pilotos[]" value="Carlos Sainz"><label for="sainz">Carlos Sainz</label></div>
+						<div><input type="checkbox" id="hulkenberg" name="pilotos[]" value="Nico Hulkenberg"><label for="hulkenberg">Nico Hulkenberg</label></div>
+					</div>
+					<div class="pilotosf1">
+						<div><input type="checkbox" id="piastri" name="pilotos[]" value="Oscar Piastri"><label for="piastri">Oscar Piastri</label></div>
+						<div><input type="checkbox" id="hamilton" name="pilotos[]" value="Lewis Hamilton"><label for="hamilton">Lewis Hamilton</label></div>
+						<div><input type="checkbox" id="lawson" name="pilotos[]" value="Liam Lawson"><label for="lawson">Liam Lawson</label></div>
+						<div><input type="checkbox" id="antonelli" name="pilotos[]" value="Andrea Kimi Antonelli"><label for="antonelli">Andrea Kimi Antonelli</label></div>
+						<div><input type="checkbox" id="stroll" name="pilotos[]" value="Lance Stroll"><label for="stroll">Lance Stroll</label></div>
+						<div><input type="checkbox" id="doohan" name="pilotos[]" value="Jack Doohan"><label for="doohan">Jack Doohan</label></div>
+						<div><input type="checkbox" id="ocon" name="pilotos[]" value="Esteban Ocon"><label for="ocon">Esteban Ocon</label></div>
+						<div><input type="checkbox" id="hadjar" name="pilotos[]" value="Isack Hadjar"><label for="hadjar">Isack Hadjar</label></div>
+						<div><input type="checkbox" id="albon" name="pilotos[]" value="Alexander Albon"><label for="albon">Alexander Albon</label></div>
+						<div><input type="checkbox" id="bortoleto" name="pilotos[]" value="Gabriel Bortoleto"><label for="bortoleto">Gabriel Bortoleto</label></div>
+					</div>
+				</div>
+			</div>
+			<div class="campo">
+				<label>Selecciona tu piloto favorito principal:</label><br>
+				<div class="favs">
+					<div class="pilotosf1">
+						<div><input type="radio" id="norris" name="piloto_principal" value="Lando Norris"><label for="norris">Lando Norris</label></div>
+						<div><input type="radio" id="leclerc" name="piloto_principal" value="Charles Leclerc"><label for="leclerc">Charles Leclerc</label></div>
+						<div><input type="radio" id="verstappen" name="piloto_principal" value="Max Verstappen"><label for="verstappen">Max Verstappen</label></div>
+						<div><input type="radio" id="russell" name="piloto_principal" value="George Russell"><label for="russell">George Russell</label></div>
+						<div><input type="radio" id="alonso" name="piloto_principal" value="Fernando Alonso"><label for="alonso">Fernando Alonso</label></div>
+						<div><input type="radio" id="gasly" name="piloto_principal" value="Pierre Gasly"><label for="gasly">Pierre Gasly</label></div>
+						<div><input type="radio" id="bearman" name="piloto_principal" value="Oliver Bearman"><label for="bearman">Oliver Bearman</label></div>
+						<div><input type="radio" id="tsunoda" name="piloto_principal" value="Yuki Tsunoda"><label for="tsunoda">Yuki Tsunoda</label></div>
+						<div><input type="radio" id="sainz" name="piloto_principal" value="Carlos Sainz"><label for="sainz">Carlos Sainz</label></div>
+						<div><input type="radio" id="hulkenberg" name="piloto_principal" value="Nico Hulkenberg"><label for="hulkenberg">Nico Hulkenberg</label></div>
+					</div>
+					<div class="pilotosf1">
+						<div><input type="radio" id="piastri" name="piloto_principal" value="Oscar Piastri"><label for="piastri">Oscar Piastri</label></div>
+						<div><input type="radio" id="hamilton" name="piloto_principal" value="Lewis Hamilton"><label for="hamilton">Lewis Hamilton</label></div>
+						<div><input type="radio" id="lawson" name="piloto_principal" value="Liam Lawson"><label for="lawson">Liam Lawson</label></div>
+						<div><input type="radio" id="antonelli" name="piloto_principal" value="Andrea Kimi Antonelli"><label for="antonelli">Andrea Kimi Antonelli</label></div>
+						<div><input type="radio" id="stroll" name="piloto_principal" value="Lance Stroll"><label for="stroll">Lance Stroll</label></div>
+						<div><input type="radio" id="doohan" name="piloto_principal" value="Jack Doohan"><label for="doohan">Jack Doohan</label></div>
+						<div><input type="radio" id="ocon" name="piloto_principal" value="Esteban Ocon"><label for="ocon">Esteban Ocon</label></div>
+						<div><input type="radio" id="hadjar" name="piloto_principal" value="Isack Hadjar"><label for="hadjar">Isack Hadjar</label></div>
+						<div><input type="radio" id="albon" name="piloto_principal" value="Alexander Albon"><label for="albon">Alexander Albon</label></div>
+						<div><input type="radio" id="bortoleto" name="piloto_principal" value="Gabriel Bortoleto"><label for="bortoleto">Gabriel Bortoleto</label></div>
+					</div>
+				</div>
+			</div>
+			<div class="campo">
+				<label for="comentarios">¿Por qué es tu piloto favorito?</label>
+				<textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+				<span class="error" id="errorComentarios"></span>
+			</div>
+			<div class="campo">
+				<div class="favs">
+					<button type="submit">Enviar</button>
+					<button type="reset">Restablecer</button>
+				</div>
+			</div>
+		</form>
+    </body>
+</html>

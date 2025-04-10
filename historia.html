@@ -1,0 +1,157 @@
+<html>
+	<head>  
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>F1 Historia</title>
+		<link rel="icon" type="image/x-icon" href="./Inicio/logof1.png">
+		<link rel="stylesheet" type="text/css" href="./f1web.css" media="screen">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	</head>
+	<body id="historia">
+        <script type="text/javascript">
+            function abrirBarra() {
+            	var navegacion = document.getElementById("barra");
+            	navegacion.classList.toggle("active");
+        	}
+			let cantidadColumnas = 5;
+			var ancho = window.matchMedia("(max-width: 960px)");
+			function comprobarAncho(dimensiones) {
+  				if (dimensiones.matches) {
+    			cantidadColumnas = 3;
+  				} else {
+    			cantidadColumnas = 5;
+  				}
+				inicio();
+			}
+			ancho.addListener(comprobarAncho);
+			var campeones=[                   
+				['GIUSEPPE FARINA', './Pilotos/Campeones/farina.jpg', 'farina'], // 1950
+    			['JUAN MANUEL FANGIO', './Pilotos/Campeones/fangio.jpg', 'fangio'], // 1951
+    			['ALBERTO ASCARI', './Pilotos/Campeones/ascari.jpg', 'ascari'], // 1952
+    			['ALBERTO ASCARI', './Pilotos/Campeones/ascari.jpg', 'ascari'], // 1953
+    			['JUAN MANUEL FANGIO', './Pilotos/Campeones/fangio.jpg', 'fangio'], // 1954
+    			['JUAN MANUEL FANGIO', './Pilotos/Campeones/fangio.jpg', 'fangio'], // 1955
+    			['JUAN MANUEL FANGIO', './Pilotos/Campeones/fangio.jpg', 'fangio'], // 1956
+    			['JUAN MANUEL FANGIO', './Pilotos/Campeones/fangio.jpg', 'fangio'], // 1957
+    			['MIKE HAWTHORN', './Pilotos/Campeones/hawthorn.jpg', 'hawthorn'], // 1958
+    			['JACK BRABHAM', './Pilotos/Campeones/brabham.jpg', 'brabham'], // 1959
+    			['JACK BRABHAM', './Pilotos/Campeones/brabham.jpg', 'brabham'], // 1960
+    			['PHIL HILL', './Pilotos/Campeones/hill.jpg', 'hill'], // 1961
+    			['GRAHAM HILL', './Pilotos/Campeones/graham_hill.jpg', 'graham_hill'], // 1962
+    			['JIM CLARK', './Pilotos/Campeones/clark.jpg', 'clark'], // 1963
+    			['JOHN SURTEES', './Pilotos/Campeones/surtees.jpg', 'surtees'], // 1964
+    			['JIM CLARK', './Pilotos/Campeones/clark.jpg', 'clark'], // 1965
+    			['JACK BRABHAM', './Pilotos/Campeones/brabham.jpg', 'brabham'], // 1966
+    			['DENNY HULME', './Pilotos/Campeones/hulme.jpg', 'hulme'], // 1967
+    			['GRAHAM HILL', './Pilotos/Campeones/graham_hill.jpg', 'graham_hill'], // 1968
+    			['JACKIE STEWART', './Pilotos/Campeones/stewart.jpg', 'stewart'], // 1969
+    			['JOCHEN RINDT', './Pilotos/Campeones/rindt.jpg', 'rindt'], // 1970
+    			['JACKIE STEWART', './Pilotos/Campeones/stewart.jpg', 'stewart'], // 1971
+    			['EMERSON FITTIPALDI', './Pilotos/Campeones/fittipaldi.jpg', 'fittipaldi'], // 1972
+    			['JACKIE STEWART', './Pilotos/Campeones/stewart.jpg', 'stewart'], // 1973
+    			['EMERSON FITTIPALDI', './Pilotos/Campeones/fittipaldi.jpg', 'fittipaldi'], // 1974
+    			['NIKI LAUDA', './Pilotos/Campeones/lauda.jpg', 'lauda'], // 1975
+    			['JAMES HUNT', './Pilotos/Campeones/hunt.jpg', 'hunt'], // 1976
+    			['NIKI LAUDA', './Pilotos/Campeones/lauda.jpg', 'lauda'], // 1977
+    			['MARIO ANDRETTI', './Pilotos/Campeones/andretti.jpg', 'andretti'], // 1978
+    			['JODY SCHECKTER', './Pilotos/Campeones/scheckter.jpg', 'scheckter'], // 1979
+    			['ALAN JONES', './Pilotos/Campeones/jones.jpg', 'jones'], // 1980
+    			['NELSON PIQUET', './Pilotos/Campeones/piquet.jpg', 'piquet'], // 1981
+    			['KEKE ROSBERG', './Pilotos/Campeones/rosberg.jpg', 'rosberg'], // 1982
+    			['NELSON PIQUET', './Pilotos/Campeones/piquet.jpg', 'piquet'], // 1983
+    			['NIKI LAUDA', './Pilotos/Campeones/lauda.jpg', 'lauda'], // 1984
+    			['ALAIN PROST', './Pilotos/Campeones/prost.jpg', 'prost'], // 1985
+    			['ALAIN PROST', './Pilotos/Campeones/prost.jpg', 'prost'], // 1986
+    			['NELSON PIQUET', './Pilotos/Campeones/piquet.jpg', 'piquet'], // 1987
+    			['AYRTON SENNA', './Pilotos/Campeones/senna.jpg', 'senna'], // 1988
+    			['ALAIN PROST', './Pilotos/Campeones/prost.jpg', 'prost'], // 1989
+    			['AYRTON SENNA', './Pilotos/Campeones/senna.jpg', 'senna'], // 1990
+    			['AYRTON SENNA', './Pilotos/Campeones/senna.jpg', 'senna'], // 1991
+    			['NIGEL MANSELL', './Pilotos/Campeones/mansell.jpg', 'mansell'], // 1992
+    			['ALAIN PROST', './Pilotos/Campeones/prost.jpg', 'prost'], // 1993
+    			['MICHAEL SCHUMACHER', './Pilotos/Campeones/schumacher.jpg', 'schumacher'], // 1994
+    			['MICHAEL SCHUMACHER', './Pilotos/Campeones/schumacher.jpg', 'schumacher'], // 1995
+    			['DAMON HILL', './Pilotos/Campeones/damon_hill.jpg', 'damon_hill'], // 1996
+    			['JACQUES VILLENEUVE', './Pilotos/Campeones/villeneuve.jpg', 'villeneuve'], // 1997
+    			['MIKA HAKKINEN', './Pilotos/Campeones/hakkinen.jpg', 'hakkinen'], // 1998
+    			['MIKA HAKKINEN', './Pilotos/Campeones/hakkinen.jpg', 'hakkinen'], // 1999
+    			['MICHAEL SCHUMACHER', './Pilotos/Campeones/schumacher.jpg', 'schumacher'], // 2000
+    			['MICHAEL SCHUMACHER', './Pilotos/Campeones/schumacher.jpg', 'schumacher'], // 2001
+    			['MICHAEL SCHUMACHER', './Pilotos/Campeones/schumacher.jpg', 'schumacher'], // 2002
+    			['MICHAEL SCHUMACHER', './Pilotos/Campeones/schumacher.jpg', 'schumacher'], // 2003
+    			['MICHAEL SCHUMACHER', './Pilotos/Campeones/schumacher.jpg', 'schumacher'], // 2004
+    			['FERNANDO ALONSO', './Pilotos/Campeones/alonso.jpg', 'alonso'], // 2005
+    			['FERNANDO ALONSO', './Pilotos/Campeones/alonso.jpg', 'alonso'], // 2006
+				['KIMI RÄIKKÖNEN', './Pilotos/Campeones/raikkonen.jpg', 'raikkonen'], // 2007
+    			['LEWIS HAMILTON', './Pilotos/Campeones/hamilton.jpg', 'hamilton'], // 2008
+    			['JENSON BUTTON', './Pilotos/Campeones/button.jpg', 'button'], // 2009
+    			['SEBASTIAN VETTEL', './Pilotos/Campeones/vettel.jpg', 'vettel'], // 2010
+    			['SEBASTIAN VETTEL', './Pilotos/Campeones/vettel.jpg', 'vettel'], // 2011
+    			['SEBASTIAN VETTEL', './Pilotos/Campeones/vettel.jpg', 'vettel'], // 2012
+    			['SEBASTIAN VETTEL', './Pilotos/Campeones/vettel.jpg', 'vettel'], // 2013
+    			['LEWIS HAMILTON', './Pilotos/Campeones/hamilton.jpg', 'hamilton'], // 2014
+    			['LEWIS HAMILTON', './Pilotos/Campeones/hamilton.jpg', 'hamilton'], // 2015
+    			['NICO ROSBERG', './Pilotos/Campeones/nico_rosberg.jpg', 'nico_rosberg'], // 2016
+    			['LEWIS HAMILTON', './Pilotos/Campeones/hamilton.jpg', 'hamilton'], // 2017
+    			['LEWIS HAMILTON', './Pilotos/Campeones/hamilton.jpg', 'hamilton'], // 2018
+    			['LEWIS HAMILTON', './Pilotos/Campeones/hamilton.jpg', 'hamilton'], // 2019
+    			['LEWIS HAMILTON', './Pilotos/Campeones/hamilton.jpg', 'hamilton'], // 2020
+    			['MAX VERSTAPPEN', './Pilotos/Campeones/verstappen.jpg', 'verstappen'], // 2021
+    			['MAX VERSTAPPEN', './Pilotos/Campeones/verstappen.jpg', 'verstappen'], // 2022
+    			['MAX VERSTAPPEN', './Pilotos/Campeones/verstappen.jpg', 'verstappen'], // 2023
+    			['MAX VERSTAPPEN', './Pilotos/Campeones/verstappen.jpg', 'verstappen']  // 2024
+            ];
+			function inicio(){
+				var html = "";
+				var i = 0;
+				var ano = 1950;
+				for(var campeon of campeones)
+				{
+					if(i%cantidadColumnas == 0)
+					{
+						html += "<tr>";
+					}
+					var boton = i + 1;
+					html += '<td><div class=temporada><div class="ano">'+ano+'</div><div class="foto"><img class="personas" id="'+campeon[2]+'" src="'+campeon[1]+'"></div><div class="nombre">'+campeon[0]+'</div></div></td>';
+					i = boton;
+					ano++;
+					if(i%cantidadColumnas == 0)
+					{
+						html += '</tr>';
+					}
+				}
+				document.getElementById('tabla').innerHTML = html;
+			}
+			window.onload = function(){
+				comprobarAncho(ancho);
+				inicio();
+			};
+        </script>
+        <button id="menu" onclick="abrirBarra()">☰</button>
+		<nav id="barra">
+			<ul>
+				<li><a href="./inicio.html">Inicio</a></li>
+				<li><a href="./historia.html">Historia de la F1</a></li>
+				<li><a href="./actual.html">Equipos y pilotos</a></li>
+				<li><a href="./circuitos.html">Circuitos</a></li>
+				<li><a href="./reglamento.html">Reglamento Básico</a></li>
+				<li><a href="./momentos.html">Sucesos Históricos</a></li>
+				<li><a href="./tecnologia.html">Tecnología en la F1</a></li>
+				<li><a href="./rivalidades.html">Rivalidades Históricas</a></li>
+				<li><a href="./whoiswho.html">¿Quién es Quién?</a></li>
+				<li><a href="./contacto.html">Formulario</a></li>
+			</ul>
+		</nav>
+		<header id="titulo">
+			<img class="logo" src="./Inicio/logof1.png">
+			<p id="texto1">Historia de la F1</p>
+			<img class="logo" src="./Inicio/logof1.png">
+		</header>
+		<table id="tabla">
+		</table>
+    </body>
+</html>

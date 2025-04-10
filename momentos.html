@@ -1,0 +1,115 @@
+<html>
+	<head>  
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>F1 Momentos</title>
+		<link rel="icon" type="image/x-icon" href="./Inicio/logof1.png">
+		<link rel="stylesheet" type="text/css" href="./f1web.css" media="screen">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	</head>
+	<body id="momentos">
+        <script type="text/javascript">
+            function abrirBarra() {
+            	var navegacion = document.getElementById("barra");
+            	navegacion.classList.toggle("active");
+        	}
+			function esconder(id) {
+    			const contenido = document.getElementById(id);
+    			if (contenido.style.display === "block") {
+        			contenido.style.display = "none";
+    			} else {
+        			contenido.style.display = "block";
+    			}
+			}
+        </script>
+        <button id="menu" onclick="abrirBarra()">☰</button>
+		<nav id="barra">
+			<ul>
+				<li><a href="./inicio.html">Inicio</a></li>
+				<li><a href="./historia.html">Historia de la F1</a></li>
+				<li><a href="./actual.html">Equipos y pilotos</a></li>
+				<li><a href="./circuitos.html">Circuitos</a></li>
+				<li><a href="./reglamento.html">Reglamento Básico</a></li>
+				<li><a href="./momentos.html">Sucesos Históricos</a></li>
+				<li><a href="./tecnologia.html">Tecnología en la F1</a></li>
+				<li><a href="./rivalidades.html">Rivalidades Históricas</a></li>
+				<li><a href="./whoiswho.html">¿Quién es Quién?</a></li>
+				<li><a href="./contacto.html">Formulario</a></li>
+			</ul>
+		</nav>
+		<header id="titulo">
+			<img class="logo" src="./Inicio/logof1.png">
+			<p id="texto1">Sucesos Históricos</p>
+			<img class="logo" src="./Inicio/logof1.png">
+		</header>
+		<div id="etapas">
+			<p>La Fórmula 1 ha sido testigo de momentos históricos que han definido su esencia, desde las primeras carreras en la década de 1950 hasta las emocionantes batallas en la pista en la actualidad. Eventos icónicos como el primer Gran Premio, las tragedias que marcaron un antes y un después en la seguridad, y hazañas memorables de pilotos legendarios han dejado una huella imborrable en la historia del automovilismo. Estos hitos no solo han influido en la trayectoria de la F1, sino que también han moldeado la percepción del deporte a nivel global.</p>
+    		<div class="decada">
+        		<h2 onclick="esconder('normas-1950-1970')">1950-1970: La Era del Peligro y la Evolución de la F1</h2>
+        		<div class="contenido" id="normas-1950-1970">
+            		<ul>
+        	        	<li><span>Primer Gran Premio de la historia (1950)</span> – Silverstone alberga la primera carrera oficial de la Fórmula 1, ganada por Giuseppe Farina, quien se proclamó primer campeón del mundo de la categoría ese mismo año.</li>
+    	            	<li><span>Dominio de Fangio (1951-1957)</span> – Juan Manuel Fangio gana cinco títulos mundiales y se convierte en una leyenda.</li>
+    	            	<li><span>La tragedia de Monza (1961)</span> – Wolfgang von Trips y 15 espectadores fallecen en un accidente devastador.</li>
+   	            		<li><span>Lotus introduce el monoplaza con aerodinámica (1968)</span> – La ingeniería de Colin Chapman revoluciona la aerodinámica con el Lotus 49.</li>
+   	            		<li><span>Primer título póstumo de la F1 (1970)</span> – Jochen Rindt se convierte en el único campeón mundial póstumo tras su trágico accidente en Monza.</li>
+                		<li><span>El accidente de Niki Lauda en Nürburgring (1976)</span> – Lauda sufre graves quemaduras en un choque a alta velocidad, pero regresa milagrosamente a las pistas solo 42 días después.</li>
+                		<li><span>Dominio del Lotus 79 y el efecto suelo (1978)</span> – Mario Andretti gana el campeonato con un coche revolucionario.</li>
+            		</ul>
+        		</div>
+    		</div>
+    		<div class="decada">
+        		<h2 onclick="esconder('normas-1980-1990')">1980-1990: Innovación y Grandes Hitos</h2>
+        		<div class="contenido" id="normas-1980-1990">
+            		<ul>
+                		<li><span>Caos y tragedia en la temporada 1982</span> – Mueren Gilles Villeneuve y Riccardo Paletti, mientras Didier Pironi sufre un accidente que lo retira del deporte.</li>
+                		<li><span>La batalla entre Lauda y Prost (1984)</span> – Niki Lauda gana el título por solo medio punto, la diferencia más pequeña en la historia de la F1.</li>
+                		<li><span>El dominio de Senna en Mónaco (1988)</span> – Ayrton Senna marca una de las vueltas más impresionantes de la historia en clasificación, sacando más de un segundo a su compañero Prost.</li>
+                		<li><span>Dominio de Williams con Nigel Mansell (1992)</span> – El Williams FW14B introduce la suspensión activa, marcando una nueva era tecnológica.</li>
+                		<li><span>El Gran Premio de Donington (1993)</span> – Senna realiza una primera vuelta legendaria bajo la lluvia, adelantando a cinco coches en apenas unas curvas y ganando la carrera con una actuación magistral.</li>
+                		<li><span>Título de Prost tras volver del retiro (1993)</span> – Alain Prost regresa tras un año sabático y gana su cuarto y último campeonato mundial con Williams.</li>
+                		<li><span>La introducción de los coches de seguridad (1993)</span> – Se oficializó el uso del coche de seguridad en la F1 para aumentar la seguridad tras varios accidentes trágicos en la década de 1980 y principios de 1990, incluyendo el de Ayrton Senna en 1994 en Imola.</li>
+                		<li><span>La muerte de Ayrton Senna y Roland Ratzenberger (1994)</span> – Uno de los fines de semana más trágicos de la F1, con la pérdida de dos pilotos en Imola.</li>
+                		<li><span>Schumacher y su polémico choque con Hill (1994)</span> – En Adelaida, Schumacher se estrella contra Hill, asegurando su primer título mundial.</li>
+                		<li><span>La descalificación del mundial de Schumacher en 1997</span> – Michael Schumacher es excluido del campeonato tras intentar sacar a Jacques Villeneuve en Jerez.</li>
+            		</ul>
+        		</div>
+    		</div>
+    		<div class="decada">
+        		<h2 onclick="esconder('normas-2000-2010')">2000-2010: Dominio, Hazañas y Remontadas Épicas</h2>
+        		<div class="contenido" id="normas-2000-2010">
+            		<ul>
+                		<li><span>La introducción del HANS (2003)</span> – Se hace obligatorio el uso del sistema HANS (Head and Neck Support) para reducir las lesiones cervicales en impactos a alta velocidad, marcando un antes y un después en la seguridad de los pilotos.</li>
+                		<li><span>Schumacher y su quinto título consecutivo (2004)</span> – Con Ferrari, Michael Schumacher alcanza cinco títulos seguidos, estableciendo un récord histórico.</li>
+                		<li><span>El adelantamiento de Alonso a Schumacher en 130R (2005)</span> – En Suzuka, Alonso realiza uno de los mejores adelantamientos de la historia.</li>
+                		<li><span>Alonso rompe la racha de Ferrari (2005)</span> – Se convierte en el primer campeón español de la F1 con Renault, poniendo fin a la era de dominio de Schumacher y Ferrari.</li>
+                		<li><span>Kimi Räikkönen gana el título por un punto (2007)</span> – En una de las temporadas más emocionantes, Räikkönen supera a Hamilton y Alonso en la última carrera para llevarse el campeonato.</li>
+                		<li><span>Spygate: el escándalo de espionaje de McLaren (2007)</span> – McLaren es encontrada culpable de espiar a Ferrari y recibe una multa de 100 millones de dólares, además de ser excluida del campeonato de constructores.</li>
+                		<li><span>Crashgate: el escándalo de Singapur (2008)</span> – Renault ordena a Nelson Piquet Jr. chocar deliberadamente para favorecer a Fernando Alonso, lo que desata uno de los mayores escándalos en la historia de la F1.</li>
+                		<li><span>Hamilton gana el título en la última curva (2008)</span> – En el GP de Brasil, Lewis Hamilton adelanta a Timo Glock en la última curva de la última vuelta, arrebatando el campeonato a Felipe Massa por un solo punto.</li>
+                		<li><span>Jenson Button gana el GP de Canadá 2011</span> – Tras seis paradas en boxes, un choque con Alonso y una remontada desde el último lugar, Button gana una de las mejores carreras de la historia.</li>
+                		<li><span>La temporada 2012</span> – Siete ganadores diferentes en las siete primeras carreras. En el emocionante final en Brasil, Vettel, tras un choque que lo dejó en la última posición, logra remontar hasta el sexto lugar, asegurando su tercer campeonato mundial. Mientras tanto, Alonso, que finaliza segundo, no alcanza el título a pesar de haber tenido una de las mejores temporadas individuales en la historia de la Fórmula 1.</li>
+                		<li><span>El dominio de Vettel con Red Bull (2010-2013)</span> – Vettel gana cuatro títulos consecutivos, estableciendo un récord de victorias.</li>
+                		<li><span>El accidente de Jules Bianchi en Suzuka (2014)</span> – Un trágico accidente que llevó a su fallecimiento en 2015 y motivó la implementación del Halo en la F1.</li>
+                		<li><span>La introducción del Halo (2018)</span> – Un cambio significativo en la seguridad, diseñado para proteger a los pilotos de impactos en la cabeza.</li>
+                		<li><span>El dominio de Mercedes (2014-2020)</span> – Mercedes y Hamilton dominan la era moderna de la F1 con múltiples campeonatos y récords de victorias.</li>
+            		</ul>
+        		</div>
+    		</div>
+    		<div class="decada">
+        		<h2 onclick="esconder('normas-2020-actualidad')">2020-Actualidad: Dominio y Cambios en la F1</h2>
+        		<div class="contenido" id="normas-2020-actualidad">
+            		<ul>
+                		<li><span>La polémica final de Abu Dabi 2021</span> – Verstappen gana su primer título en la última vuelta tras una controvertida decisión de dirección de carrera.</li>
+                		<li><span>El regreso de Fernando Alonso a los podios con Aston Martin (2023)</span> – Alonso vuelve a lo más alto tras una década sin coches competitivos.</li>
+                		<li><span>El dominio absoluto de Max Verstappen (2023)</span> – Verstappen rompe el récord de más victorias en una temporada, demostrando un dominio aplastante en la nueva era de la F1.</li>
+            		</ul>
+        		</div>
+    		</div>
+		</div>
+    </body>
+</html>
